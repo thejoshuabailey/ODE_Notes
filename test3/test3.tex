@@ -1,0 +1,499 @@
+% vim:tw=72 sw=2 ft=tex
+%         File: test3.tex
+% Date Created: 2015 Mar 31
+%  Last Change: 2015 Mar 31
+%     Compiler: pdflatex
+%       Author: joshua
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+
+\graphicspath{ {./images/} }
+
+\usepackage{mathrsfs} % gives me a font I need
+\usepackage[document]{ragged2e} % flush everything left dont wory about
+% the error 
+
+\DeclareMathOperator\arctanh{arctanh}
+\DeclareMathOperator\sech{sech}
+
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{corollary}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{example}{Example}
+
+\begin{document}
+
+% Date: 03.23.15 ------------------ {{{
+
+%\marginpar{Date: 03.23.15 \\[5mm]
+%\footnotesize{
+
+%Aside \\
+%Thrm( Wronskian Thrm). If \( \exists a \in I \) st det \( W(a) \neq 0
+%\), then \( y_1, \dots , y_n \) (in \( \mathscr{D}^{(n-1)} (I) \)) are linearly
+%independent, where 
+%\[ 
+%det W(a) =  
+%\]
+%\[  
+%  \begin{vmatrix} 
+%    y_1(x)         & \cdots & y_n(x) \\
+%    y_1'(x)        & \cdots & y_n'(x) \\
+%    y_1''(x)       & \cdots & y_n''(x) \\
+%    \vdots         & \ddots & \vdots\\
+%    y_1^{(n-1)}(x) & \cdots & y_n^{(n-1)}(x) \\
+%  \end{vmatrix}
+%\]
+
+%}
+%}
+%\marginnote{this is some shit I guess you could say}
+\begin{theorem}
+  (Existence - Uniqueness Thrm, \( \exists \)! Thrm ). If I is an
+  interval, \( a \in I \), and \( p_u \) for all \( 1 \leq k \leq n-1 \),
+  and \( f \) are cts on \( I \), then 
+  \( \forall b_i \), for \( 0 \leq i \leq n-1 \), (then initial value problem)  
+\end{theorem}
+
+\[ \text{ (1) } y^{(n)} + \sum_{k=1}^n y^{(n-k)} p_u(x) = f(x) \]
+\& \( y^{(i)} (a) = b_i  \) , has a unique soln on \( I \). \\
+Note: the solns to linear ODEs are unique on the whole interval \( I
+\).\\[5mm]
+
+\begin{theorem}
+  Thrm. If \( w = \{ y \in \mathscr{D}^{(n)} (I) \text{ | } y \text{ satisfies (1)}
+  \} \) then
+  dim \( W \geq n \). \\[5mm]
+\end{theorem}
+
+\begin{proof}
+  put \( y^{(i)}_j (a) = \delta_{ij} \),  where
+
+  \[ 
+  \delta_{ij} =
+  \begin{cases}
+    1, & \text{ if } i = j; \\
+    0, & \text{ if } i \neq j
+  \end{cases}
+  \]
+
+  for \( 1 \leq i \), \( j \leq n \). By the \( \exists \)! Thrm, for each
+  \( j \) there is a unique soln to (1) on \( I \). Now, 
+
+  \begin{align*}
+    W(a) &= (y_j^{(i)}(a) ) \in \text{ Mat}_n( \mathbb{R}) \\
+    &= I_n
+  \end{align*}
+
+  \[ \therefore |W(a)|=1 \neq 0 \]
+
+  whence, \( y_1, \dots , y_n \) are linearly independent . Hence,
+
+  \[ dim W \leq n  \]
+\end{proof}
+
+\begin{theorem}
+  Thrm (Strong wronskian converse) If \( y_1, \dots , y_n \) are linearly
+  independent ( in \( \mathscr{D}^{(n)} (I) \) ) and \( y_1, \dots , y_n
+  \) are solns to 
+
+  \marginpar{Date: 03.24.15 }
+
+  \[ y^{(n)} + \sum_{k=1}^n y^{(n-k)} p_k(x) = 0 \]
+
+  where \( p_k \) are cts on I for \( k=1, \dots , n \), then \( |W(a)
+  \neq 0  \) for all \( a \in I \). 
+\end{theorem}
+
+%then \( \forall a \in I \), \(
+%|W(a)| \neq 0 \). \\
+\begin{proof}
+  Assume that there is an \( a \in I \) st \( |W(a)| = 0 \), then
+  the linear system 
+
+  \[ \text{ (1) } W(a) \vec{x} = \vec{0} \]
+
+  has a nontrivial soln, say \( \vec{x} = \vec{c} \in \mathbb{R}^n \)\\
+  \( (W(a) \in \text{Mat}_n( \mathbb{R})) \). Denote: \( \vec{c} = (c_1,
+  \dots , c_n) \neq \vec{0} \). \\[5mm]
+
+  Put \( y = \sum_{j=1}^n c_j y_j \), then \( y \) satisfies (*) and % \in \mathscr{D}^{(n)}(I)\), then
+
+  \[  y(a) = \sum_{j=1}^n c_j y_j(a) = 0  \implies\]
+
+  \[ y'(a) = \sum_{j=1}^n c_j y'_j(a) = 0 \implies\]
+
+  \[  y''(a) = \sum_{j=1}^n c_j y''_j(a) = 0  \implies\]
+
+  \[ \vdots \]
+
+  \[  y^{(n-1)}(a) = \sum_{j=1}^n c_j y^{(n-1)}_j(a) = 0 \text{ ( by(1)) } \]
+
+  Notice that \( y \equiv 0 \) on \( I  \) also satisfies (*) and is such
+  that \( y^{(k)}(a) = 0 \) for \( 1 \leq k \leq n-1 \). \( \therefore \)
+  by \( \exists \)! thrm, 
+
+  \[ \sum_{j=1}^n c_j y_j \equiv 0 \text{ on } I \]
+
+  Thus, since \( y_1, \dots , y_n \) are lin ind, all \( c_j = 0 \), which
+  is a contradiction.  
+\end{proof}
+
+\begin{theorem}
+  If
+  \[ W = \{ y \in \mathbb{R}^{(n)}(I) \text{ | } y \text{ satisfies (*) }  \}
+  \]
+
+  then dim \( W \leq n  \)
+\end{theorem}
+
+\begin{proof}
+  let \( y_1, \dots , y_n \) be lin ind solns of (*); we show that
+  there are scalars \( c_j \in \mathbb{R} \) st \( y = \sum_{j=1}^n
+  c_jy_j\) on \( I \).
+
+  Consider the linear system 
+
+  \[ \text{ (2) } W(a) \vec{x} =
+  \begin{pmatrix}
+    y(a) \\
+    y'(a) \\
+    \vdots \\
+    y^{(n-1)}(a)
+  \end{pmatrix}\]
+
+  where \( W(a) \) in the Wronskian matrix of \( y_1, \dots, y_n \). By
+  the SWC, \( |W(a)| \neq 0 \). Thus, (2) has a unique, not-trivial soln,
+  say \( \vec{0} \pm \vec{x} = \vec{c} \neq \vec{0} \in \mathbb{R}^n\). Thus
+
+  \marginpar{Date: 03.25.15 }
+
+  \[ W(a) \vec{c} =
+  \begin{pmatrix}
+    y(a) \\
+    y'(a) \\
+    \vdots \\
+    y^{(n-1)}(a)
+  \end{pmatrix}\]
+
+  has rows 
+
+  \begin{align*}
+    \sum_{j=1}^n c_jy_j(a)         & = y(a) \\
+    \sum_{j=1}^n c_jy'_j(a)        & = y'(a) \\
+    \sum_{j=1}^n c_jy''_j(a)       & = y''(a) \\
+    & \vdots \\
+    \sum_{j=1}^n c_jy^{(n-1)}_j(a) & = y^{(n-1)}(a)
+  \end{align*}
+
+  Finally, since both \( y \) and \( \sum_{j=1}^nc_jy_j \) are solns to
+  the hom nth order linear ODE (*) (the ODE being home and \( y_j \), for
+  \( 1 \leq j \leq n \), being solns, so is any linear combo of \( y_j \)s
+  since the soln space to a linear home ODE is linear) and both \( y \)
+  and \(  \sum_{j=1}^nc_jy_j  \) satisfy all the same \( n \) many initial
+  ?conbos?, by the \( \exists \)! thrm, \( y =  \sum_{j=1}^nc_jy_j  \) on
+  \( I \). \( \therefore \) \( y \in \) Span \( \{ y_j \in W \text{ | } 1 \leq
+  j \leq n \} \). Thus, dim \( W \leq n \).
+\end{proof}
+
+\begin{corollary}
+  If 
+
+  \[ W = \{ y \in D^{(n)} (I) \text{ | } y \text{ satisfies (x) } \} \]
+
+  where
+
+  \[ \text{ (*) } y^{(n)} + \sum_{k=1}^n y^{(n-k)} p_k(x) = 0 \]
+
+  then dim \( W = n \).
+\end{corollary}
+
+\begin{proof}
+  We showed that \( n \leq \text{ dim} W \leq n \).
+\end{proof}
+
+\begin{example}
+  \( y'' - y = 0 \) \\
+  Note that both \( y_1 = \cosh x \) and \( y_2 = \sinh x \) are solns on
+  \( \mathbb{R} \). The soln space is \( 2 - \text{ dim'l } \). Not also
+  that if 
+
+  \[ a \cosh x + b \sinh x = 0 \text{ for all } x \in \mathbb{R} \]
+
+  then in particular, \( x = 0 \implies a = 0 \).\\
+  \( \therefore b \sinh x = 0 \) for all \( x \). \\
+
+  However, if \( x \neq 0 \) then \( \sinh x \neq 0 \); whence, \( b = 0
+  \). Hence, \( B = \{ \cosh x \text{ , } \sinh x \} \) are linearly
+  independent solns to \( y'' = y \), and the soln space has dim'n 2, \( B
+  \) is a basis for the soln space. \( \therefore \) every soln to \( y''
+  = y\) has the form 
+
+  \[ y = a \cosh x + b \sinh x \]
+
+  for some \( a, b \in \mathbb{R} \). Likewise, \( B' = \{ e^x, e^{-x} \}
+  \) is also a basis. Note:
+
+  \[  |W(x)| = 
+  \begin{vmatrix}
+    e^x & e^{-x} \\
+    e^x & -e^{-x} 
+  \end{vmatrix}
+  = e^x
+  \begin{vmatrix}
+    1 & e^{-x} \\
+    1 & -e^{-x} 
+  \end{vmatrix}
+  =
+  \begin{vmatrix}
+    1 & 1 \\
+    1 & -1 
+  \end{vmatrix}
+  = -2  \neq 0
+  \]
+
+  \( \therefore \) by Wronsky's Thrm, \( B' \) is lin ind. 
+\end{example}
+
+\begin{example}
+  Example: \( y'' + y = 0 \) \\ 
+
+  Here \( B = \{ \cos x, \sin x \} \) is a basis.
+\end{example}
+
+\underline{nth order hom linear ODEs with constant coefficients:}
+
+\[ \text{ (1) } \sum_{k=0}^n a_ky^{(k)} = 0 \]
+
+consider 
+
+\[ y = e^{rx} \]
+
+then 
+
+\begin{align*}
+  y'      & = re^{rx} = ry \implies \\
+  y''     & = r^2e^{rx} = r^2y \implies \\
+  & \vdots \\
+  y^{(k)} & = r^ky
+\end{align*}
+
+thus, \( y = e^{rx} \) yields 
+
+\begin{align*}
+  0 & = \sum_{k=0}^n a_ky^{(k)} \\
+  & = \sum_{k=0}^n a_kr^ky \\
+  & = y\sum_{k=0}^n a_kr^{(k)}  \implies
+\end{align*}
+
+\[ \sum_{k=0}^n a_kr^{(k)} = 0 \]
+
+\( \therefore y = e^{rx} \) is a soln to (1) if \( r \) is a root (zero)
+of the char poly of \( \sum_{k=0}^n a_ky^{(k)} = 0 \), 
+
+\marginpar{Date: 03.26.15 } % Continue notes  
+
+\[ \rho (x) = \sum_{k=0}^n a_kx^k,\]
+%which is called the caracteristic poly of (1) 
+
+then \( y = e^{rx} \) is a soln to \( \sum_{k=0}^n a_ky^{(k)} = 0 \). 
+
+\begin{example}
+If \( r_1, \dots , r_n  \in \mathbb{R}\)  are paiswise distinct then \(
+e^{r_1x}, \dots , e^{r_nx}\) are linearly independent (in \( \mathscr{F}
+( \mathbb{R})\). we use the Wronskian: 
+
+\[ |W(x)| = 
+\begin{vmatrix}
+  e^{r_1x} & e^{r_2x} & \cdots & e^{r_nx} \\
+  r_1e^{r_1x} & r_2e^{r_2x} & \cdots & r_ne^{r_nx} \\
+  \vdots & \vdots & \ddots & \vdots \\
+  r_1^{n-1}e^{r_1x} & r_2^{n-1}e^{r_2x} & \cdots & r_n^{n-1}e^{r_nx} \\
+\end{vmatrix}
+\]
+
+\[ 
+e^{(r_1+r_2+ \cdots +r_n)x} =
+\begin{vmatrix}
+  1 & 1 & \cdots & 1  \\
+  r_1 & r_2 & \cdots & r_n\\
+  \vdots & \vdots & \ddots & \vdots \\
+  r_1^{n-1} & r_2^{n-1} & \cdots & r_n^{n-1} \\
+\end{vmatrix}
+\]
+
+\[ e^{(r_1+r_2+ \cdots +r_n)x} \prod_{1 \leq i < j \leq n}(r_j - r_i) \neq 0 \]
+
+(for all \( x \) ). therefore by the wronskian thrm, \( e^{r_1x} ,
+e^{r_2x}, \dots , e^{r_nx} \) ar lin ind, 
+\end{example}
+
+\begin{example}
+
+(Vandermonds) \\
+consider 
+\[ 
+V_n(x) = 
+\begin{pmatrix}
+  1 & x & x^2  & \cdots & x^{n-1} \\
+  1 & r_2 & r_2^2 & \cdots & r_2^{n-1} \\
+  1 & r_3 & r_3^2 & \cdots & r_3^{n-1} \\
+  \vdots & \vdots & \vdots & \ddots  & \vdots \\
+  1 & r_n & r_n^2 & \cdots & r_n^{n-1}
+\end{pmatrix}
+\]
+
+which is an \( n \times n \) Vandermonde Matrix.\\
+Put 
+
+\[ f(x) = \det V_n(x) \in P_{n-1} \left[ \mathbb{R}\right],  \]
+
+then \( f(r_j) = \det (V_n(r_j)) = 0 \) for all \( 2 \leq j \leq n \),
+by the alternating property of determinates. therefore by the factor Thrm, 
+
+\[ f(x) = a \prod\limits_{2 \leq j \leq n} (x-r_j) ,  \] % 2 \leq j \leq n
+
+where 
+\[ a = (-1)^{n-1}
+\begin{vmatrix}
+  1 & x & x^2  & \cdots & x^{n-1} \\
+  1 & r_2 & r_2^2 & \cdots & r_2^{n-1} \\
+  1 & r_3 & r_3^2 & \cdots & r_3^{n-1} \\
+  \vdots & \vdots & \vdots & \ddots  & \vdots \\
+  1 & r_n & r_n^2 & \cdots & r_n^{n-1}
+\end{vmatrix}
+,
+\]
+
+which is an \( (n-1) \times (n-1) \det \). therefore by the inductive
+hypothesis, 
+
+\[ a = (-1)^{n-1} \prod\limits_{2 \leq i < j \leq n}(r_j - r_i) \]
+
+therefore 
+
+\[ f(x) = (-1)^{n-1} \prod\limits_{2 \leq i < j \leq n} (r_j - r_i) \prod\limits_{2 \leq j \leq n} (x-r_j) \]
+
+Notice that 
+\[  \prod\limits_{2 \leq j \leq n}(x-r_j) = (-1)^{n-1}  \prod\limits_{2 \leq j \leq n}(r_j -x).  \]
+
+Therefore
+
+\begin{align*}
+  f(x) &= (-1)^{n-1}  \prod\limits_{2 \leq i \leq j \leq n}(r_j-r_i)(-1)^{n-1}  \prod\limits_{2 \leq j \leq n}(r_j -x) \\
+  &=  \prod\limits_{2 \leq j \leq n}(r_j -x)  \prod\limits_{2 \leq i
+  \leq j \leq n} (r_j-r_i).  
+\end{align*}
+
+In particular, 
+
+\begin{align*}
+ \det V_n(r_1) &= f(r_1) \\
+ &= \prod\limits_{2 \leq j \leq n}(r_j - r_1)  \prod\limits_{2 \leq j
+ \leq i \leq n}(r_j-r_i) \\
+ &= \prod\limits_{1 \leq i \leq j \leq n}(r_j - r_i).
+\end{align*}
+
+\end{example}
+
+\marginpar{Date: 03.31.15 } % Continue notes 
+
+Recall: the characteristic poly of \( \sum_{k=0}^n a_ky^{(k)} \) is 
+
+\[ \rho (x) =  \sum_{k=0}^n a_kx^{(k)}  , \]
+
+and we showed that if \( r_1, \dots , r_n \) are pairwise distinct then
+\( B = \{ e^{r_1x}, \dots , e^{r_nx}\} \) is linearly independent (in \(
+ \mathscr{C}^{( \infty )} (\mathbb{R})\) ). We also showed that if \( r \) is a
+ zero of \( \rho (x) \) then \( y = e^{rx} \) is a soln to \(
+ \sum_{k=0}^n a_ky^{(k)} = 0  \). This all immediatly implies the
+ following: 
+
+ \begin{theorem}
+ If \(\rho (x)  \sum_{k=0}^n a_kx^{(k)} \) has \( n \) many distinct
+ real zeros then  the soln space of 
+
+ \[\text{(*) } \sum_{k=0}^n a_ky^{(k)}  = 0 \]
+
+ has basis \( \{ e^{r_1x} , \dots , e^{r_nx}\} \), i.e., every soln of *
+ has the form 
+
+ \[ \sum_{j=1}^n c_je^{r_jx} . \]
+ \end{theorem}
+
+ \begin{example}
+ (Revisited)
+
+ Consider \( y'' - y = 0 \). This has char poly 
+ \[ \rho (x) = x^2 -1 = (x-1)(x+1)  ,\]
+ which has zeros \( \pm 1 \). 
+
+ Thus, \( B = \{ e^x , e^{-x} \} \) is a basis for the soln space of 
+ \[ y'' - y = 0  \]
+ Q: What are the mising basis elements if a char poly has repeating
+ zeros?
+
+ \end{example}
+
+ Recall the "ring" of polynomials 
+ 
+ \[ \mathbb{R}[x] = \{ \sum_{k=0}^n a_kx^k \text{ | } n \in \mathbb{N}
+ \text{ \& } a_k \in \mathbb{R} \} ,\]
+
+ where
+
+ \[ \sum_{k=0}^n a_kx^{(k)} + \sum_{k=0}^n b_kx^{(k)} = \sum_{k=0}^n
+ (a_k + b_k)x^{(k)}   \]
+
+ \[ \sum_{i=0}^m a_ix^{(i)} \sum_{j=0}^m b_jx^{(j)}  = \sum_{k=0}^{m+n}
+ c_k x^{(k)}, \text{ where }\]
+
+ \[ c_k = \sum_{i+j=k} a_ib_j .\]
+
+ \underline{Notation}. Put \( D = \frac{d}{dx} \text{ : }
+ \mathscr{C}^{(\infty)} (I)  \) 
+
+ \( D^0 = i \) (identity on \(\mathscr{C}^{(\infty)} (I) \) ), and 
+
+ \[ D^n = D D^{n-1} \text{ for } n \in \mathbb{Z}^+ .\]
+
+ 
+
+
+
+
+\newpage
+\section*{Books}
+ Hausen and sullivan "Real Analysis" \\
+ Reference: I.N. Herstein's "Topics in Abstract Algebra" (2nd ed),
+ "Abstract Algebra" (3rd ed)\\
+ Artin's "Algebra" \\
+ (Formal poly : See hungerfords springer GTM.) \\
+
+
+%the contropositive of \( A \implies B \) is 
+
+
+%\marginpar{
+%Aside \\
+
+%Thrm( Wronskian Thrm). If \( \exists a \in I \) st det \( W(a) \neq 0
+%\), then \( y_1, \dots , y_n \) (in \( \mathscr{D}^{(n-1)} (I) \)) are linearly
+%independent, where 
+%\[ 
+%det W(a) =  
+%\]
+
+
+
+
+% }}}
+
+\end{document}

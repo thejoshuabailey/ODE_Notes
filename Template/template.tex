@@ -1,0 +1,42 @@
+% vim:tw=72 sw=2 ft=tex
+%         File: template.tex
+% Date Created: 2015 Mar 31
+%  Last Change: 2015 Mar 31
+%     Compiler: pdflatex
+%       Author: joshua
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+
+% this specifies that latex should look for a dirctory named images from
+% its current directory. if you add a picture Place it in this
+% directory.
+\graphicspath{ {./images/} } 
+
+% gives me a font I need 
+\usepackage{mathrsfs} 
+
+% This makes it so that I dont have to flushleft on every thing(SAVES SO
+% MUCH TIME). dont worry about the error 
+\usepackage[document]{ragged2e} 
+
+% lets me use \arctanh and \sech in math mode
+\DeclareMathOperator\arctanh{arctanh} 
+\DeclareMathOperator\sech{sech}
+
+% see my test3 notes 
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{corollary}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{example}{Example}
+
+\begin{document}
+
+
+\end{document}
