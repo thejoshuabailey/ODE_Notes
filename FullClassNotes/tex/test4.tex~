@@ -1,0 +1,1091 @@
+% vim:tw=72 sw=2 ft=tex
+%         File: test4.tex
+% Date Created: 2015 Apr 13
+%  Last Change: 2015 Apr 29
+%     Compiler: pdflatex
+%       Author: joshua
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+
+\usepackage{mathrsfs} % gives me a font I need
+\usepackage[document]{ragged2e} % flush everything left dont wory about
+% the error 
+
+\DeclareMathOperator\arctanh{arctanh}
+\DeclareMathOperator\sech{sech}
+
+%\newtheorem*{theorem}{Theorem}
+%\newtheorem*{corollary}{Corollary}
+
+%\theoremstyle{definition}
+%\newtheorem*{definition}{Definition}
+%\newtheorem*{example}{Example}
+
+\everymath{\displaystyle}
+
+\begin{document}
+
+\marginpar{Date: 04.13.15 } % Continue notes 
+Here we address the possibility of the char poly \( \rho(x) \) of \(
+\sum_{k=0}^{n} a_ky^{(k)} = 0  \) with complex zeros. So, assuming that
+\( r = a + bi \) is a zero of \( \rho = \sum_{k=0}^{n} a_k x^k \), then
+we know that \( y= e^{rk} = e^{(a+bi)x} = e^{ax} e^{(bx)i}\). Recall
+that if \( a_k \in \mathbb{R} \) for \( 0 \leq k \leq n \), i.e., \(
+\rho(x) \in \mathbb{R}[x] \), then \( \bar{r} = a-bi\) \( (b \pm 0 \) is
+also a zero of \( \rho(x) \). Thus, in the case of \( r = a \pm bi \),
+we are "missing" now not just one real-valued basis element, but two
+real valued basis elements. 
+
+Euler's identity enabels us to determine there two missing basis
+elements: 
+
+\[ \text{ (1) } e^{ix} = \cos(x) = i\sin(x) \in \mathbb{C} \text{ for all } x \in
+\mathbb{R} \]
+
+what led Euler to this identity are the Maclarin series: 
+
+\[ e^x = 1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!}+
+\frac{x^4}{4!}+ \frac{x^5}{5!} + \cdots = \sum_{n \geq 0} \frac{x^n}{n!};\]
+
+\[ \cos(x) = 1 - \frac{x^2}{2!} +
+\frac{x^4}{4!} - \frac{x^6}{6!} + \frac{x^8}{8!} - \frac{x^10}{10!} +
+\cdots = \sum_{n \geq 0} (-1)^n \frac{x^{2n}}{2n!};\]
+
+\[ \sin(x) =  x -  \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} +
+\frac{x^9}{9!} - \frac{x^11}{11!} + \cdots = \sum_{n \geq 0} (-1)^n
+\frac{x^{2n +1}}{(2n+1)!};\]
+
+These hold for all \( x \in \mathbb{R} \). Notice that (1) simply gives
+pts on the unit circle in \( \mathbb{C} \)
+
+\[ |e^{ix}| = 1 \text{ for all } x \in \mathbb{R} \]
+
+Note: \( e^{i \pi} + 1 = 0. \) \( (x = \pi) \)
+
+Observe that \( e^{ix} \) is a complex-valued scalar mult of \( \cos x
+\) \& \( \sin x \). So, back to the soln
+
+\begin{align*}
+  y &= e^{ax} e^{(bx)i} \\
+  &=e^{ax}(\cos bx + i \sin bx) \\
+  &= e^{ax} \cos x + i(e^{ax} \sin bx),
+\end{align*}
+
+which is likewise a complex-valued linear combo of \( e^{ax} \cos bx \) \& \(
+e^{ax} \sin bx \). These are to real-balued soln to the ODE \(
+\sum_{k=0}^{n}a_ky^{(k)} =0, \) i.e., there are the two missing basis
+elements. therefore if \( (x-r)^m, \) where \( r = a +bi \), is a factor
+of \( \rho(x) \), then the corespoinding basis elements are: 
+
+\begin{align*}
+  e^{ax} \cos bx &\text{ , } e^{ax} \sin bx \\
+  xe^{ax} \cos bx &\text{ , } xe^{ax} \sin bx \\
+  x^2e^{ax} \cos bx &\text{ , } x^2e^{ax} \sin bx \\
+  \vdots & \vdots  \\
+  x^{m-1}e^{ax} \cos bx &\text{ , } x^{m-1}e^{ax} \sin bx
+\end{align*}
+
+Here there are the missing 2m many basis elements. 
+
+\marginpar{Date: 04.14.15 } % Continue notes 
+
+\begin{example}
+  \[ y'' + y' - y = \sin^2x \]
+  Here \( \sum_{k=0}^{n} y^{(k)} = f(x) \), where \( n=2 \) and \( f(x) =
+  \sin^2x\). Notice that 
+
+  \begin{align*}
+    y &= \sin^2x \implies \\
+    y' &= 2 \sin x \cos x \implies \\
+    y'' &= 2 \cos^2x - 2\sin^2x.
+  \end{align*}
+
+  \begin{align*}
+    y &= \sin^2x; \\
+    y' &= 2 \sin x \cos x = \sin 2x \\
+    y'' &= 2 \cos^2x - 2\sin^2x = 2 \cos 2x.
+  \end{align*}
+
+  the terms in there derivatives are 
+
+  \begin{align*}
+    1, \\
+    \sin^2x, \\
+    \sin x \cos x \\
+    \cos^2x. 
+  \end{align*}
+
+  Another way to see these terms is as 
+
+  \begin{align*}
+    1, \\
+    \cos 2x \\
+    \sin 2x. 
+  \end{align*}
+
+  We consider a posible particular soln 
+
+  \[ y_p = a + b\cos 2x + c \sin 2x, \]
+
+  which is a linear combo of the terms above. Note that \( y_p \) is a
+  particular soln iff 
+
+  \[ y_p'' + y_p' - y_p = \sin^2x \]
+
+  Now, 
+
+  \begin{align*}
+    y_p &= a + b\cos 2x + c \sin 2x \implies \\
+    y_p' &= -2b\sin2x + 2c\cos2x \implies \\
+    y_p'' &= -4b\cos2x -4c\sin2x \implies
+  \end{align*}
+
+  \[ y_p'' + y_p' - y_p = \sin^2x \iff \]
+
+  \[ (2c-4b)\cos2x - (2b+4c)\sin2x - b\cos2x -c\sin2x -a = \sin^2x \iff \]
+  \[ (2c-5b)\cos2x - (2b+5c)\sin2x -a = \frac{1-\cos2x}{2} \iff \]
+  \[ -a-1/2+(2c-5b+1/2)\cos2x - (2b+5c)\sin2x = 0. \]
+
+  This last equation is an identity if 
+
+  \[ a = -1/2 \text{ \& } 
+  \begin{cases}
+    -5b + 2c + 1/2 &= 0 \\
+    2b + 5c &=0.
+  \end{cases}
+  \]
+
+  Note:
+  \[
+  \begin{cases}
+    -10b + 4c &= -1 \\
+    2b + 5c &= 0
+  \end{cases}
+  \]
+\[
+  \begin{bmatrix}
+    10 & 25 & | & 0 \\
+    -10 & 4 & | & -1 \\
+  \end{bmatrix}
+\]
+
+  \begin{align*}
+    c &= -1/29 \\
+    b &= 5/58
+  \end{align*}
+
+  Therefore
+
+  \[ y_p = -1/2 + \frac{5}{58} \cos2x - \frac{1}{29}\sin2x, \]
+
+  Which you have cheked is an actual soln to \( y'' + y' -y = \sin^2x. \)
+
+\end{example}
+
+\marginpar{Date: 04.15.15 } % Continue notes 
+
+\begin{example}
+  \[ y'' + y' - y = \sec x \]
+
+  \begin{align*}
+    f(x) &= \sec x \\
+    f'(x) &= \sec x \tan x \\
+    f''(x) &= \sec x \tan^2x + \sec^3x \\
+    &= \sec x (\sec^2x - 1) + \sec^3x \\
+    &= 2\sec^3x - \sec x
+  \end{align*}
+
+  Put 
+
+  \[ B = \{ 1, \sec x, \sec x \tan x, \sec^3x \}  \]
+
+  Also, put 
+
+  \[ y_p = a + b \sec x + c\sec x \tan x + d \sec^3x \]
+
+  \[ y_p'  \]
+
+  Since \( \sec^3x \tan x \notin  \) Span \( B \), the method of
+  undetermined coefis fails. \\[5mm]
+
+  Idea: Consider \( B = \{ y_1, \dots, y_n \} \), the basis of \(
+  \sum_{k=0}^{n} a_k y^{(k)} = 0 \), and 
+
+  \[ \text{ (1) } y_p = \sum_{k=1}^{n} v_k(x) y_k(x). \]
+
+  We will show that a particular soln of \( \sum_{k=0}^{n} a_k y^{(k)}
+  = f(x)  \) always has form (1) for some \( v_k(x) \in C^{(n)} (I) \).
+  this is called " Variation of parameters."
+
+\end{example}
+
+\marginpar{Date: 04.16.15 } % Continue notes 
+
+We want a particular soln \( y = v_1(x) y_1(x) + v_2(x) y_2(x) \) to \(
+\sum_{k=1}^{2} a_k y^{(k)} = f(x) \), where the hom soln space has basis
+\( B = \{ y_1, y_2 \}  \subset C^{(2)}(I) \). Here we require 
+
+\[  y_p'' + py_p' + qy_p = f(x) \text{ (monic). } \]
+
+\[ y_p = v_1y_1 + v_2y_2 \implies \]
+
+\[ y_p' = v_1'y_1 + v_1y_1' + v_2'y_2 + v_2y_2' \]
+
+If \( v_1'y_1 + v_2'y_2 = 0 \) then 
+
+\[ y_p' = v_1y_1' + v_2y_2' \]
+
+Thus, 
+
+\[ y_p'' = v_1'y_1' + v_1y_1'' + v_2'y_2' v_2y_2'' \]
+
+\[ y_p'' +py_p' + qy_p = f(x) \iff \]
+
+\[ v_1'y_1' + v_1y_1'' + v_2'y_2' v_2y_2'' + pv_1y_1' + pv_2y_2' +
+qv_2y_1 + qv_2y_2 = f(x) \iff \]
+
+\[ v_1(y_1'' + py_1' + qy_1) + v_2(y_2'' + py_2' + qy_2) + v_1' y_1' +
+v_2'y_2' = f(x) \iff \]
+
+\[ v_1'y_1' + v_2'y_2' = f(x). \]
+
+therefore
+
+\begin{cases}
+  y_1' v_1' + y_1'v_2' = f(x) \\
+  y_1v_1' + y_2v_2' = 0
+\end{cases}
+
+iff 
+
+\[ 
+\begin{pmatrix}
+  y_1 & y_2 \\
+  y_1'& y_2' 
+\end{pmatrix}
+\begin{pmatrix}
+  v_1'\\
+  v_2' 
+\end{pmatrix}
+=
+\begin{pmatrix}
+  a\\
+  b
+\end{pmatrix}
+\]
+
+% missed some stuff
+
+Therefore 
+
+\[ v_1 = - \int \frac{y_2(x)f(x)}{|w(x)|} dx \]
+
+and 
+
+\[  v_2 =  \int \frac{y_1(x)f(x)}{|w(x)|} dx \]
+
+Hence, 
+
+\[ y_p(x) =  \]
+
+% missed some more stuff
+
+Now, in general, consider 
+
+\[ \sum_{k=0}^{n} a_ky^{(k)} = f(x) \]
+with basis \( B = \{ y_j \in C^{(n)} (I) | 1 \leq j \leq n \} \) for the
+assoc hom ODE. Also, consider 
+
+\[ y_p= \sum_{j=1}^{n} v_jy_j, \]
+then
+\begin{align*}
+  y_p' &= \sum_{j=1}^{n}(v_j'y_j +v_jy_j') \\
+  &= \sum_{j=1}^{n} v_jy_j' \text{ , if } \sum_{j=1}^{n}v_j'y_j = 0.
+\end{align*}
+
+Now, 
+
+\begin{align*}
+  y_p'' &= \sum_{j=1}^{n}(v_j'y_j' + v_jy_j'') \\
+  &= \sum_{j=1}^{n}y_jy_j'' \text{ , if } \sum_{j=1}^{n}v_j'y_j' =0
+\end{align*}
+
+continuing, 
+
+\[ y_p^{(k)} = \sum_{j=1}^{n} v_jy_j^{(k)} \text{ , if }
+\sum_{j=1}^{n}v_j'y_j^{(k-1)} =0 \]
+
+for \( 1 \leq k \leq n-1 \). Finally, 
+
+\begin{align*}
+  y_p^{(n)} &= \sum_{j=1}^{n} (v_j'y_j^{(n-1)} +v_jy_j^{(n)}) \\
+ &=    \sum_{j=1}^{n} v_j'y_j^{(n-1)} + \sum_{j=1}^{n}v_jy_j^{(n)}) 
+\end{align*}
+
+Therefore
+
+\[ \sum_{k=1}^{n}a_ky_p^{(k)} = f(x) \iff \]
+
+\[ a_n \sum_{j=1}^{n} v_j'y_j^{(n-1)} + a_n  \sum_{j=1}^{n}v_jy_j^{(n)}
++ \sum_{k=1}^{n-1}a_k \sum_{j=1}^{n}v_jy_j^{(k)} = f(x) \iff\]
+
+\[  a_n \sum_{j=1}^{n} v_j'y_j^{(n-1)} +  \sum_{j=1}^{n} a_nv_jy_j^{(n)}
++ \sum_{j=1}^{n} \sum_{k=1}^{n=1} a_kv_jy_j^{(k)} = f(x) \iff
+ \]
+
+ \[ 
+  a_n \sum_{j=1}^{n} v_j'y_j^{(n-1)}  + \sum_{j=1}^{n}v_j \sum_{k=1}^{n}
+  a_ky_j^{(k)} = f(x) \iff
+ \]
+
+ \[ a_n \sum_{j=1}^{n} v_n'y_j^{(n-1)} = f(x) \]
+
+ since \( y_j \in B. \) Thus, 
+
+ \begin{align*}
+   \sum_{j=1}^{n}v_j'y_j &= 0  \text{ 1st eqn }\\
+   \sum_{j=1}^{n}v_j'y_j' &= 0 \text{ 2nd eqn }\\
+   \vdots \\
+   \sum_{j=1}^{n}v_j'y_j^{(k-1)} &= 0 \text{ kth eqn }\\
+   \vdots \\
+   \sum_{j=1}^{n}v_j'y_j^{(n-2)} &= 0 \text{ (n-1)th eqn }\\
+   a_n\sum_{j=1}^{n}v_j'y_j^{(n-1)} &= f(x) \text{ nth eqn }\\
+ \end{align*}
+
+
+
+
+
+Now, 
+\begin{align*}
+  y_p' &= v_1'y_1 + v_1y_1' + v_2'y_2 + v_2y_2' \implies \\
+  y_p'' &= v_1''y_1 + v_1'y_1' + v_1'y_1' + v_1y_1'' + 
+v_2''y_2 + v_2'y_2' + v_2'y_2' + v_2y_2'' \\
+&= 2(v_1'y_1' + v_2'y_2') + v_1y_1'' + v_2y_2'' ,  
+\end{align*}
+
+if we impose the condition \( v_1''y_1 + v_2''y_2 = 0. \) therefore 
+
+\begin{align*}
+  f(x) &= y_p'' + py_p' + qy_p \\
+  &= 2(v_1'y_1' + v_2'y_2') + v_1y_1'' + v_2y_2'' +
+  pv_1'y_1 + pv_1y_1' + pv_2'y_1 _ pv_2y_2' + q_vy_1 + qv_2y_2\\
+  &= v_1(y_1'' + py_1' +qy_1) + v_2(y_2'' + py_2' +qy_2) + 2(v_1'y_1' +
+  v_2'y_2') + p(v_1'y_1'+v_2'y_2) \\
+  &= 2(v_1'y_1' + v_2'y_2') + p(v_1'y_1 + v_2'y_2)
+\end{align*}
+
+therefore, 
+
+\[ f(x) =  2(v_1'y_1' + v_2'y_2') + p(v_1'y_1 + v_2'y_2)
+\]
+
+implies 
+
+\[ f(x) = v_1'(2y_1' +py_1) + v_2'(2y_2' +py_2) \]
+
+
+% Date: 04.20.15 ------------------ {{{
+\newpage
+\marginpar{Date: 04.20.15 }
+
+We want a particular soln \( y = v_1(x) y_1(x) + v_2(x) y_2(x) \) to \(
+\sum_{k=1}^{2} a_k y^{(k)} = f(x) \), where the hom soln space has basis
+\( B = \{ y_1, y_2 \}  \subset C^{(2)}(I) \). Here we require 
+
+\[  y_p'' + py_p' + qy_p = f(x) \text{ (monic). } \]
+
+\[ y_p = v_1y_1 + v_2y_2 \implies \]
+
+\[ y_p' = v_1'y_1 + v_1y_1' + v_2'y_2 + v_2y_2' \]
+
+If \( v_1'y_1 + v_2'y_2 = 0 \) then 
+
+\[ y_p' = v_1y_1' + v_2y_2' \]
+
+Thus, 
+
+\[ y_p'' = v_1'y_1' + v_1y_1'' + v_2'y_2' v_2y_2'' \]
+
+\[ y_p'' +py_p' + qy_p = f(x) \iff \]
+
+\[ v_1'y_1' + v_1y_1'' + v_2'y_2' v_2y_2'' + pv_1y_1' + pv_2y_2' +
+qv_2y_1 + qv_2y_2 = f(x) \iff \]
+
+\[ v_1(y_1'' + py_1' + qy_1) + v_2(y_2'' + py_2' + qy_2) + v_1' y_1' +
+v_2'y_2' = f(x) \iff \]
+
+\[ v_1'y_1' + v_2'y_2' = f(x). \]
+
+therefore
+
+\[
+\begin{cases}
+  y_1' v_1' + y_1'v_2' = f(x) \\
+  y_1v_1' + y_2v_2' = 0
+\end{cases}
+\]
+
+iff 
+
+\[ 
+\begin{pmatrix}
+  y_1 & y_2 \\
+  y_1'& y_2' 
+\end{pmatrix}
+\begin{pmatrix}
+  v_1'\\
+  v_2' 
+\end{pmatrix}
+=
+\begin{pmatrix}
+  a\\
+  b
+\end{pmatrix}
+\]
+
+% missed some stuff
+
+Therefore 
+
+\[ v_1 = - \int \frac{y_2(x)f(x)}{|w(x)|} dx \]
+
+and 
+
+\[  v_2 =  \int \frac{y_1(x)f(x)}{|w(x)|} dx \]
+
+Hence, 
+
+\[ y_p(x) =  \]
+
+% missed some more stuff
+
+Now, in general, consider 
+
+\[ \sum_{k=0}^{n} a_ky^{(k)} = f(x) \]
+with basis \( B = \{ y_j \in C^{(n)} (I) | 1 \leq j \leq n \} \) for the
+assoc hom ODE. Also, consider 
+
+\[ y_p= \sum_{j=1}^{n} v_jy_j, \]
+then
+\begin{align*}
+  y_p' &= \sum_{j=1}^{n}(v_j'y_j +v_jy_j') \\
+  &= \sum_{j=1}^{n} v_jy_j' \text{ , if } \sum_{j=1}^{n}v_j'y_j = 0.
+\end{align*}
+
+Now, 
+
+\begin{align*}
+  y_p'' &= \sum_{j=1}^{n}(v_j'y_j' + v_jy_j'') \\
+  &= \sum_{j=1}^{n}y_jy_j'' \text{ , if } \sum_{j=1}^{n}v_j'y_j' =0
+\end{align*}
+
+continuing, 
+
+\[ y_p^{(k)} = \sum_{j=1}^{n} v_jy_j^{(k)} \text{ , if }
+\sum_{j=1}^{n}v_j'y_j^{(k-1)} =0 \]
+
+for \( 1 \leq k \leq n-1 \). Finally, 
+
+\begin{align*}
+  y_p^{(n)} &= \sum_{j=1}^{n} (v_j'y_j^{(n-1)} +v_jy_j^{(n)}) \\
+ &=    \sum_{j=1}^{n} v_j'y_j^{(n-1)} + \sum_{j=1}^{n}v_jy_j^{(n)}) 
+\end{align*}
+
+Therefore
+
+\[ \sum_{k=1}^{n}a_ky_p^{(k)} = f(x) \iff \]
+
+\[ a_n \sum_{j=1}^{n} v_j'y_j^{(n-1)} + a_n  \sum_{j=1}^{n}v_jy_j^{(n)}
++ \sum_{k=1}^{n-1}a_k \sum_{j=1}^{n}v_jy_j^{(k)} = f(x) \iff\]
+
+\[  a_n \sum_{j=1}^{n} v_j'y_j^{(n-1)} +  \sum_{j=1}^{n} a_nv_jy_j^{(n)}
++ \sum_{j=1}^{n} \sum_{k=1}^{n=1} a_kv_jy_j^{(k)} = f(x) \iff
+ \]
+
+ \[ 
+  a_n \sum_{j=1}^{n} v_j'y_j^{(n-1)}  + \sum_{j=1}^{n}v_j \sum_{k=1}^{n}
+  a_ky_j^{(k)} = f(x) \iff
+ \]
+
+ \[ a_n \sum_{j=1}^{n} v_n'y_j^{(n-1)} = f(x) \]
+
+ since \( y_j \in B. \) Thus, 
+
+ \begin{align*}
+   \sum_{j=1}^{n}v_j'y_j &= 0  \text{ (1st eqn) }\\
+   \sum_{j=1}^{n}v_j'y_j' &= 0 \text{ (2nd eqn) }\\
+   \vdots \\
+   \sum_{j=1}^{n}v_j'y_j^{(k-1)} &= 0 \text{ (kth eqn) }\\
+   \vdots \\
+   \sum_{j=1}^{n}v_j'y_j^{(n-2)} &= 0 \text{ ((n-1)th eqn) }\\
+   a_n\sum_{j=1}^{n}v_j'y_j^{(n-1)} &= f(x) \text{ (nth eqn) }\\
+ \end{align*}
+
+ \[ \implies W(y_j)_{1 \leq j \leq n} 
+ \begin{pmatrix}
+   v_1'\\
+   \vdots \\
+   v_n'
+ \end{pmatrix}
+ =
+ f(x) \vec{e_n}
+ \]
+
+ Notice that \( |W(y_j)_{1 \leq j \leq n}| \neq 0 \) for all \( x \in I
+ \) since \( y_js \) are linearly independent  ( being that \( y_j \in B
+ \)). Thus, by Cramer's Rule, 
+
+ \[ v_j' = \frac{D_j}{D},  \]
+
+ where \( D = |W(y_j)_{1 \leq j \leq n}| \) and
+
+ \[ D_j =
+ \begin{vmatrix}
+   y_1 & \cdots & 0 & \cdots & y_n \\
+   y_1' & \cdots & 0 & \cdots & y_n' \\
+   y_1'' & \cdots & 0 & \cdots & y_n'' \\
+   \vdots &       & \vdots & & \vdots \\
+   y_1^{(n-1)} & \cdots & f(x) & \cdots & y_n^{(n-1)}
+ \end{vmatrix}
+ = (-1)^{n+j} f(x) |W_{n-1} (y_k)_{\substack{1 \leq k \leq n \\ j \neq
+ k}}| 
+ \]
+
+ Therefore 
+
+ \[ v_k' = (-1)^{j+n}f(x) \frac{|W_{n-1}(y_k)_{\substack{1 \leq k \leq n
+ \\
+ j \neq k}}|}{a_n|W_n(y_k)_{1 \leq k \leq n}|}  \]
+
+ Thus, 
+
+ \[ \text{ (1) } v_k(x) = 
+  \frac{(-1)^{j+n}}{a_n} \int f(x) \frac{|W_{n-1}(y_k)_{\substack{1 \leq
+  k \leq n \\
+  j \neq k}}|}{a_n|W_n(y_k)_{1 \leq k \leq n}|}  dx,
+ \]
+
+Where \( y_p(x) = \sum_{k=1}^{n}v_k(x)y_k(x) \) is a particular soln to
+\( \sum_{k=1}^{n}a_ky^{(k)} = f(x) \). (1) is called the variation of
+parameters formulas. \\[5mm]
+
+Ch 4 systems of ODEs 
+
+\begin{example}
+  Consider a curve \( \vec{r}:[a,b] \to \mathbb{R}^n \), where \(
+  \vec{r}(t) = (x_1(t), \dots , x_n(t)) \) and \( t \in [a,b] \). By
+  Newton's 2nd Law, \( \vec{F} = m\vec{a} = m\vec{r}''(t)\). Thus, 
+
+  \[ 
+  \begin{pmatrix}
+    m(t)x_1''(t) \\
+    m(t)x_2''(t) \\
+    \vdots \\
+    m(t)x_n''(t) 
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    F_1(t) \\
+    F_2(t) \\
+    \vdots \\
+    F_n(t) 
+  \end{pmatrix}
+  ,
+  \]
+  
+  which is a system of \( n \) many 2nd order ODEs in \( (x_1, \dots ,
+  x_n) \)
+
+
+\end{example}
+
+
+
+% }}}
+
+\marginpar{Date: 04.21.15 } % Continue notes 
+
+\marginpar{Date: 04.22.15 } % Continue notes 
+
+\begin{example}
+  Consider an 
+
+  \[ \text{ (1) } y^{(n)}+ \sum_{k=0}^{n-1} p_k(x) = f(x), \]
+
+  \[ y^{(n)} + p_{n-1}y^{(n-1)} + \cdots + p_2(x)y'' + p_1(x)y' +
+  p_0(x)y = f(x). \]
+
+  put \(y_k = y^{(k-1)}  \) for \( 1 \leq k \leq n+1 \), then 
+
+  \begin{align*}
+    y_1 &= y \implies \\
+    y_2 &= y' = y_1' \implies \\
+    y_3 &= y'' = y_1'' = y_2' \implies \\
+    y_4 &= y''' = y_1''' = y_2'' = y_3'  \implies \\
+    &\vdots \\
+    y_{n+1} &= y^{(n)} = y_n'
+  \end{align*}
+
+  Thus, (1) becomes 
+
+  \[ \text{ (2) } y_n' + \sum_{k=0}^{n-1}p_k(x)y_k' = f(x), \]
+
+  which is a first order linear ODE. puting (2) whith the alone n-1
+  many 1st order ODEs yields the following 1st order system: with n
+  many ODEs:
+
+  \[
+  \begin{cases}
+  y_n' + \sum_{k=0}^{n-1}p(x)y_k' = f(x)  \\
+  y_1' = y_2 \\
+  y_2' = y_3 \\
+  \vdots \\
+  y_{n-1}' = y_n
+  \end{cases}
+\]
+
+Again, this is a system of n many 1st linear ODEs from a single nth
+order linear ODE. This gives yet another example to motivate studying
+systems of linear ODEs.
+
+\end{example}
+
+\begin{example}
+  page 255 number 12 \\ 
+  
+ \[ 
+  \begin{cases}
+   x' = y  \\
+  y' = x 
+  \end{cases}
+  \]
+  
+  Note: \( x = y' = x'' \). So, this yields \( x'' - x = 0 \), which has
+  basis \( B = \{ \cosh t, \sinh t \} \). Thus, 
+
+  \[ x = a \cosh t + b \sinh t \]
+
+  Now, 
+
+  \[ y =  b \cosh t + a \sinh t\]
+
+  Notice that if \( \vec{r}(t) = (x(t), y(t))  \) then \( \vec{r}'(t) =
+  (x'(t), y'(t)) = (y(t), x(t))  \). We want such an \( \vec{r}(t)  \). In otherwords,
+  we may view the above system as a single. 1st order ODE of a
+  parametric function. 
+
+  Recall that 
+
+  \[ \cosh (\alpha + t) = \cosh \alpha \cosh t + \sinh \alpha \sinh t \]
+
+  Take \( A \in \mathbb{R} \) st \( a/A \geq 1 \), then \( a/A \in \)
+  Range \( (\cosh)\). Now, we want \( \alpha \in \mathbb{R} \) st
+
+  \[ a = A \cosh \alpha \text{ \& }  b = A \sinh \alpha.\]
+
+  So, 
+
+  \( \coth \alpha = \frac{ \cosh \alpha}{ \sinh \alpha} = \frac{a}{b} \)
+  holds for some \( \alpha \) st \( |\alpha| < 1 \) since \( \text{
+  Range} (\coth) = \mathbb{R} \). therefore for this \( \alpha \), 
+
+  \begin{align*}
+   x &=  a \cosh t + b \sinh t \\
+   &= A \cosh \alpha \cosh t + A \sinh \alpha \sinh t \\
+   &= A \cosh (\alpha + t).
+  \end{align*}
+
+  therefore \( x = A \cosh (\alpha + t) \); whence, \( y = x' = A \sinh
+  (\alpha + t).\)
+
+  Hence, 
+
+  \[ x^2 - y^2 = A^2 \implies \frac{x^2}{A^2} - \frac{y^2}{A^2} = 1 \]
+
+These are the solns to \( \vec{r}'(t) = (x'(t), y'(t)).  \) Note : \(
+\text{ Range} (\cosh) = [1,\enfinity)\). So, if \( A > 0 \) then \( x(t)
+> 0\); where, \( \vec{r}(t) \) coresponds to the righthand branch.
+Whereas, if \( A<0 \) then \( \vec{r}(t) \) coresponds to the left hand
+branch. 
+
+Notice that we soved this linear system by "substitution." 
+
+\end{example}
+
+\marginpar{Date: 04.23.15 } % Continue notes 
+
+\begin{example}
+  (Recall). 
+
+  let \( \vec{r}(t) = (x(t), y(t))\), and consider \( \vec{r}'(t) =
+  (x'(t), y'(t)) \), then 
+
+  \[
+  \begin{cases}
+    x'(t) = y(t) \\
+    y'(t) = x(t)
+  \end{cases}
+  \iff
+  \begin{cases}
+    x'(t) - y(t) =0 \\
+    y'(t) - x(t) =0
+  \end{cases}
+  \iff
+  \begin{cases}
+    L_{11}x + L_{12}y = 0 \\
+    L_{21}x + L_{22}y = 0
+  \end{cases}
+  \iff
+  \]
+
+  \[
+  \begin{pmatrix}
+    L_{11} & L_{12} \\
+    L_{21} & L_{22}
+  \end{pmatrix}
+  \begin{pmatrix}
+    x \\
+    y
+  \end{pmatrix}
+  = 
+  \vec{0}
+  \]
+
+  Where \( L_{11} = D = L_{22} \) and \( L_{12} = -1 = L_{21} \) 
+
+  In other symbols, 
+
+  \[ 
+  \begin{pmatrix}
+    D & -1 \\
+    -1 & D
+  \end{pmatrix}
+  \begin{pmatrix}
+    x \\
+    y
+  \end{pmatrix}
+  = 
+  \vec{0}
+  \]
+
+  Recall that \( \mathbb{R}[D] \equiv \mathbb{R}[x]; \) in particular,
+  \( \mathbb{R}[D] \) is communative "ring" (multiplicative
+  communative).
+
+  Solve by "elimination:"
+
+  \[ L_{21}(L_{11}x + L_{12}y) = L_{21}0 \implies \]
+
+  \[ L_{21}L_{11}x + L_{21}L_{12}y = L_{21}0 \]
+
+  \[ L_{11}(L_{21}x + L_{21}y) = L_{11}0 \implies  \]
+
+  \[ L_{11}L_{21}x + L_{11}L_{21}y = 0 \]
+
+  \hline
+
+  \[ L_{21}L_{12}y - L_{11}L_{22}y = 0 \implies \]
+
+  \[ (L_{21}L_{12} - L_{11}L_{22}) y= 0 \implies \]
+
+  \[ 
+  \begin{vmatrix}
+    L_{11} & L_{12} \\
+    L_{21} & L_{22}
+  \end{vmatrix}
+  y
+  = 0
+  \]
+
+  Anologosly 
+
+  
+  \[ 
+  \begin{vmatrix}
+    L_{11} & L_{12} \\
+    L_{21} & L_{22}
+  \end{vmatrix}
+  x
+  = 0
+  \]
+
+  Therefore
+
+  \[ ( |L|I) 
+  \begin{pmatrix}
+    x \\
+    y
+  \end{pmatrix}
+   = \vec{0}
+  \]
+
+  where
+
+  \[
+  L=
+  \begin{pmatrix}
+    L_{11} & L_{12} \\
+    L_{21} & L_{22}
+  \end{pmatrix}
+  \]
+
+  Recall: If A is a sq matrix then 
+
+  \[ AA^a = |A|I \]
+
+  This holds for any A over a commutative ring, e.g., 
+
+  \[ A \in \text{ Mat }_n(R) \]
+
+  where R is a commutative ring say \( R = \mathbb{C} \)
+
+  Thus if \( L \in \text{ Mat}_n( \mathbb{R}[D]) \) then 
+
+  \[ L^aL = |L|I_n, \]
+
+  where \( I_n \text{ Mat}_n( \mathbb{R}[D]),  \)
+
+\[ 
+I_n = 
+\begin{pmatrix}
+  1 & \cdots & 0 \\
+  \vdots &  & \vdots \\
+  0 & \cdots & 1
+\end{pmatrix}
+\text{ , \& }
+1_{Id} \in \mathbb{R}[D]
+\]
+
+consider \( L \in \text{ Mat}_n( \mathbb{R}[D]), \) \\
+
+\( \vec{x}(t) = (x_1(t), \dots , x_n(t)) \), \( \vec{F}(t) = (F_1(t),
+\dots, F_n(t)) \in (C^{(d)}(I))^n,\) where \( d= \text{ max} \{ \text{
+deg }(L_{ij}) \text{ | } 1 \leq i \text{ , } j \leq n \} \) and \( L =
+(L_{ij}),  \) and the system of linear ODEs
+
+\[ \text{ (1) }
+L \vec{x} = \vec{F} \iff 
+\begin{pmatrix}
+  L_{11} & L_{12} & \cdots L_{1n} \\
+  L_{21} & L_{22} & \cdots L_{2n} \\
+  \vdots & \\
+  L_{n1} & L_{n2} & \cdots L_{nn} 
+\end{pmatrix}
+\begin{pmatrix}
+  x_1(t) \\
+  x_2(t) \\
+  \vdots \\
+  x_n(t)
+\end{pmatrix}
+=
+\begin{pmatrix}
+  F_1(t) \\
+  F_2(t) \\
+  \vdots \\
+  F_n(t)
+\end{pmatrix}
+\]
+
+Here 
+
+\[ L_{ij} = \sum_{k=0}^{m_{ij}} a_{i_k j_k} D^k \in \mathbb{R}[D] \]
+
+Applying the adjoint formula to (1) 
+
+\[ \text{ (2) } (|L|I_n) \vec{x} = L^a \vec{F}. \]
+
+Recall: \( A^a = (c_{ij})^T \), \( C_{ij} = (-1)^{i+j} |M_{ij}| \)
+
+In component form, (2) says that 
+
+\[ \text{ (3) } |L|x_i(t) = _i(L^a) \vec{F}(t) ,\]
+
+where \( _i(L^a) \) is the ith row of \( L^a \). Notice that (3) is a
+linear ODE in the single unknown funct \( x_i(t) \). therefore previous
+methods can be used to solve (3). 
+\end{example}
+
+\marginpar{Date: 04.27.15 } % Continue notes 
+
+Now, we consider first order linear systems, at first, without constant
+coefficients. These have the form 
+
+\[ \vec{x}'(t) + p(t) \vec{x}(t) = \vec{q}(t),  \]
+
+where \( \vec{x}: I \subseteq \mathbb{R} \to \mathbb{R}^n \) and \( p(t)
+\in \text{ Mat}_n (C(I)) \) and \( \vec{q} \in ( C^{(1)}(I))^n \). 
+
+In "normal form" this becomes 
+
+\[   \vec{x} \;'(t) = p(t) \vec{x}(t) + \vec{q}(t) \]
+
+
+
+Aside: \( R[D] \) is a communative "ring." however, \( (C(t))[D] \) this
+is not a communative, the point is that to use the det proputies
+developed last semester, we need \( \text{ Mat}_n( \mathbb{R}) \), where
+\( \mathbb{R} \) is commutative ring (then thos proff genral
+
+\begin{example}
+(\( ((C)(I))[D] \) is not commutative). 
+
+Put
+
+\[ L_1 = -tD+1 \]
+\[ L_2 = t^2D - 3, \]
+
+then \( L_1, L_2 \in ( C^{(\infty)}( \mathbb{R}) ) [D] \). Notice that 
+
+\begin{align*}
+  L_2x &= (t^2D-3)x \\
+  &= t^2Dx-3x \\
+  &= t^2x' -3x \implies
+\end{align*}
+
+\begin{align*}
+  L_1L_2x &= (-tD + 1)L_2x \\
+  &= (-tD + 1)(t^2Dx-3x) \\
+  &= -tD(t^2Dx-3x) + t^2Dx-3x \\
+  &= -tD(t^2Dx) + 3tDx + t^2Dx-3x \\
+  &= -t(2tDx + t^2D^2x) + 3+ Dx + t^2Dx-3x \\
+  &= -2t^2Dx - t^3D^2x + 3tDx + t^2Dx - 3x \\
+  &= -t^2Dx - t^3D^2x + 3tDx - 3x. 
+\end{align*}
+
+Also, 
+
+\begin{align*}
+  L_1x &= (-tD+1)x \\
+  &= -tDx + x \implies \\
+  L_2L_1x &= (t^2D-3)L_1x \\
+  &= t^2DL_1x - 3L_1x \\
+  &= t^2D(-tDx+x) + 3tDx - 3x \\
+  &= t^2D(-tDx) + t^2Dx + 3tDx-3x \\
+  &= t^2( -Dx- tD^2x) + t^2Dx+3tDx - 3x \\
+  &= -t^2Dx - t^2D^2x + t^2dx + 3tDx - 3x \\
+  &= -t^3D^2x+ 3tDx-3x. 
+\end{align*}
+
+therefore \( L_1L_2 \neq L_2L_1. \)
+
+\end{example}
+
+\marginpar{Date: 04.29.15 } % Continue notes 
+
+\[   \vec{x} \;'(t) = p(t) \vec{x}(t) + \vec{q}(t) \]
+
+where \( p(t) \in \text{ Mat}_n (C(I)) \). Now, we consider the case
+where \(  p(t) \in \text{ Mat}_n ( \mathbb{R})  \), i.e., the entries of
+the matrix p are costant functions. In the hom case, this becomes 
+
+\[ \vec{x} \;'(t) = A \vec{x}(t) \]
+
+or
+
+\[ \text{ (1) } \vec{x} \;' = A \vec{x} \]
+
+where \( A \in \text{ Mat}_n ( \mathbb{R})  \). \\
+
+Notice that if \( n = 1 \) then (1) becomes 
+
+\[ x' = ax, \]
+
+Which has solns  \( x(t) = ke^{at}. \) This leads us to a conjecture in
+the more general case, 
+
+\[ x_i(t) = k_ie^{a_it} \text{ for } 1 \leq i \leq n.\]
+
+In other words, 
+
+\[ \vec{x}(t) =
+\begin{pmatrix}
+  k_1e^{a_1t} \\
+  k_2e^{a_2t} \\
+  \vdots \\
+  k_ne^{a_nt} 
+\end{pmatrix}\]
+
+Since \( \vec{x}' = (x_i') \), 
+
+\[ \vec{x}'(t) =
+\begin{pmatrix}
+  a_1k_1e^{a_1t} \\
+  a_2k_2e^{a_2t} \\
+  \vdots \\
+  a_nk_ne^{a_nt} 
+\end{pmatrix}\]
+
+therefore this \( \vec{x}(t) \) is a soln to (1) \iff
+
+\[ 
+\begin{pmatrix}
+  a_1k_1e^{a_1t} \\
+  a_2k_2e^{a_2t} \\
+  \vdots \\
+  a_nk_ne^{a_nt} 
+\end{pmatrix}
+=A
+\begin{pmatrix}
+  k_1e^{a_1t} \\
+  k_2e^{a_2t} \\
+  \vdots \\
+  k_ne^{a_nt} 
+\end{pmatrix}
+\]
+
+Here we see that if \( a_i = a_j \) for all i and j , say \( a = a_i\), then
+\( \vec{x}'(t) = a\vec{x}(t) \) and so, (1) becomes 
+
+\[ a\vec{x}(t) = A\vec{x}(t) \]
+
+Now, notice that 
+
+\[ \vec{x}(t) = e^{at}\vec{k}, \]
+
+where \( \vec{k} = (k_1, k_2, \dots , k_n) \). therefore (1) now becomes
+
+\[ ae^{at}\vec{k} = A(e^{at}\vec{k}) \implies  \]
+
+\[ A\vec{k} = a\vec{k}. \]
+
+Recall: an eigenvalue of \( A \in \text{ Mat}_n( \mathbb{R}) \) is
+\( \lambda \in \mathbb{R} \) iff there is \( \vec{0} \neq \vec{v} \in
+\mathbb{R}^n\) st 
+
+\[ A\vec{v} = \lambda \vec{v}. \]
+
+Here \( \vec{v} \) is called an eigevector assoc with \( \lambda. \)
+therefore from above, we see that \( \vec{x}(t) = e^{\lambda t}\vec{v}
+\) is a soln to \( \vec{x}' = A \vec{x} \) iff \( \lambda \) is an
+eiginvalue of \( A \) and \( \vec{v} \) is an assoc eigenvector of \(
+\lambda. \) \\
+
+Recall: to find eigenvalues of \( A \in \text{ Mat}_n( \mathbb{R}) \),
+notice that for \( \vec{v} \neq \vec{0}, \)
+
+\begin{align*}
+  A\vec{v} \lambda \vec{v} &\iff \lambda \vec{v} - A \vec{v} = \vec{0}\\
+  &\iff (\lambda I_n  - A) \vec{v} = \vec{0}, 
+\end{align*}
+
+which is a hom system with a nontivial soln \( \vec{v} \). So, therefore
+
+\[ \text{ det}(\lambda I_n -A) = 0.\]
+
+Also, recall that the char poly of \(  A \in \text{ Mat}_n( \mathbb{R}),  \)
+
+\[ p_A(x) = \text{ det}(xI_n-A) \in \mathbb{R}[x], \]
+
+which is an nth degree poly over \( \mathbb{R} \). So, therefore to find
+eigenvalues of \( A \), we must find the zeros of \( p_A(x) \). Once we
+have the eigenvalue \( \lambda \), to find an assoc \( \vec{v} \pm
+\vec{0} \), we solve for \( \vec{v} \) in \( (A - \lambda I_n) \vec{v} =
+ \vec{0}\). 
+
+\end{document}

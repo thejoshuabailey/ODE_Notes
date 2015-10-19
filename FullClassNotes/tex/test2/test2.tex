@@ -1,22 +1,23 @@
 % vim:tw=72 sw=2 ft=tex
 %         File: test2.tex
 % Date Created: 2015 Feb 17
-%  Last Change: 2015 Mar 11
+%  Last Change: 2015 May 16
 %     Compiler: pdflatex
 %       Author: joshua
 \documentclass[10pt,a4paper]{article}
 \usepackage{amsmath, amssymb}
+\usepackage{amsthm}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 \usepackage{graphicx}
-
 \usepackage{mathrsfs} % gives me a font I need
 \usepackage[document]{ragged2e} % flush everything left dont wory about
-% the error 
+% the error
 
 \DeclareMathOperator\arctanh{arctanh}
 \DeclareMathOperator\sech{sech}
+
 
 \newtheorem*{theorem}{Theorem}
 \newtheorem*{corollary}{Corollary}
@@ -27,51 +28,69 @@
 
 \everymath{\displaystyle}
 
+
 \graphicspath{ {./images/} }
 
 \begin{document}
-\title{Notes for Second Test}
-\author{Joshua Bailey}
-\maketitle
-\newpage
+%\title{Notes for Second Test}
+%\author{Joshua Bailey}
+%\maketitle
+%\newpage
 
 % Date 02.17.15. --------------------------  {{{
 \marginpar{Date: 02.17.15.}
-\section*{Ex}
+\begin{example}
   \[ (2x \sin y \cos y ) y' = 4x^2 + \sin^2y \]
   \[ v = \sin y \implies\]
   \[ \frac{dv}{dx} = \cos y \frac{dy}{dx} \]
+
   Thus, 
   \[ 2xvv' = 4x^2 + v^2 \text{ (hom),  } w = v/x \]
+\end{example}
 
-\section*{2.1 population models}
+\section{population models}
+
   Recall that the most basic population model, \\ 
   assuming constant birth and death rates, is 
+
   \[ P' = kP \text{ (separable)  } \]
+
   Now, we give birth rates and death rates the \\
   following units: 
+
   \[ \beta(t) = \text{ birth rate } \frac{ \text{ \# of births at t }}{
   \text{ (unit of population at t)(unit of time) }} \]
 
   \[ \delta(t) = \text{ death rate } \frac{ \text{ \# of death at t }}{
   \text{ (unit of population at t)(unit of time) }} \]
+
   with this, for some small \( \Delta t \), 
+
   \[ P(t + \Delta t) \approx P(t) + \text{ ( \# birth rate at t - \# death rate at t) } \Delta t \implies   \]
   \[ = P(t) + \beta (t) P(t) \Delta t - \delta (t) P(t) \Delta t \]
   \[ \implies \frac{ \Delta P}{ \Delta t} =  \frac{P(t + \Delta t) -P(t)}{ \Delta
   t}  \approx ( \beta(t) - \delta(t) ) P(t)  \]
+
   using a diff model, the above suggest that 
+
   \[ \boxed{ P' = (\beta - \delta ) P} \]
-  this is called the general population 
+
+  This is called the general population \\[5mm]
 
   Now, consider population with constant 
   death rate, say \( \delta_0 \), and with a birth 
   rate given by 
+
   \[ \beta = \beta_1 - \beta_0P \]
+
   In context, \( \beta_0 \text{ , } \beta_1 > 0 \) by (1),
-  \[ P' = ( \beta_1 - \beta_0 P -\delta_0 ) P\] 
-  \[  = ( \beta_1 - \delta_0 ) P - \beta_0 P^2 \]
-  \[ = \beta_0 P \Big( \frac{ \beta_1-\delta_0}{\beta_0} -P \Big) \]
+
+  \begin{align*}
+    P' &= ( \beta_1 - \beta_0 P -\delta_0 ) P \\
+    &= ( \beta_1 - \delta_0 ) P - \beta_0 P^2 \\
+    &= \beta_0 P  \left( \frac{ \beta_1-\delta_0}{\beta_0} -P \right)  
+  \end{align*}
+
   which has form 
   \[ P' =  kP(M-P) \]
   \( k = \beta_0 > 0 \) and \( M = (\beta_1 -\delta_0)/ \beta_0  \) we
@@ -80,16 +99,24 @@
   \[ \frac{P'}{P(M-P)} =k \implies  \]
   \[ \int \frac{1}{P(M-P)}dP = kt + C \]
   Note that
+
   \[ \frac{1}{P(M-P)} = \frac{1}{M} \bigg( \frac{1}{M-P} +
   \frac{1}{P}\bigg) \]
+
   Thus, 
+
   \[ \frac{1}{M} (- \ln | M-P| + \ln|P|) = kt + C \implies  \]
   \[ \ln \bigg| \frac{P}{M-P} \bigg| = Mkt + C \]
+
   Now, \( P_0 = P(0) \) yields 
+
   \[ C = \ln \bigg| \frac{P_0}{M - P_0}\bigg|  \]
   Thus,
+
   \[ \ln \Big| \frac{P}{M-P} \bigg| = \ln \bigg| \frac{P_0}{M - P_0}\Big| + Mkt\]
-  Hence, if \( P > M \) or \( P > M \) then  
+
+  Hence, if \( P > M \) or \( P_0 > M \) then  
+
   \[  \frac{P}{M-P} = \frac{P_0}{M - P_0} e^{Mkt} \implies \frac{M}{P}
   -1 =  \frac{M - P_0}{P_0} e^{-Mkt}\]
   \[ \implies  \frac{M}{P} = \frac{P_0 + (M-P_0)e^{-Mkt}}{P_0} \]
@@ -114,57 +141,86 @@
   Recall: logistics population model 
   \[ P(t) = \frac{MP_0}{P_0 + (M - P)e^{-Mkt}} \]
 
-\section*{ex(P.88) \# 22}
-  \(M=100 \times 10^3 \) total population \\
-  At \( t=0 \), half the pop have heard a rumor \\
-  roughly the rumors increases \\
-  by 1000 people after 1 day \\ 
+  \begin{example}
+    Page 88 Problem \# 22 \\
+    \(M=100 \times 10^3 \) total population At \( t=0 \), half the
+    population have heard a rumor, roughly the rumors increases by 1000
+    people after 1 day 
 
-  \[ P_0 = 50 \times 10^3 \text{ \&   } P(1) = 51 \times 10^3 \]
-  we can solve for k
-  \[ 51 \times 10^3 = \frac{(100 \times 10^3) (50 \times 10^3)}{ 50
-  \times 10^3 + (100 \times 10^3 - 50 \times 10^3) e^{-Mk}} \]
-  \[ \implies 51 = \frac{5000}{50 +50e^{-Mk}} = \frac{100}{1+e^{-Mk}} \]
-  \[ \implies \frac{51}{100} = \frac{1}{1+e^{-Mk}} \implies  \]
-  \[  1+ e^{-Mk} = \frac{100}{51} \implies  e^{-Mk} = \frac{100}{51} -1
-  \implies \]
-  \[ -Mk = \ln \bigg( \frac{100}{51} -1 \bigg) \]
-  \[ \implies k= - \frac{\ln ( \frac{100}{51} - 1)}{10 \times 10^3} > 0 \]
-  \( \therefore  \) we can now solve \( P(t) = 80 \times 10^3 \) \\
-  for t. \\
+    \[ P_0 = 50 \times 10^3 \text{ \&   } P(1) = 51 \times 10^3 \]
 
-\section*{Doomsday/Extinction Model:} 
+    we can solve for k
+
+    \[ 51 \times 10^3 = \frac{(100 \times 10^3) (50 \times 10^3)}{ 50
+    \times 10^3 + (100 \times 10^3 - 50 \times 10^3) e^{-Mk}} \]
+    \[ \implies 51 = \frac{5000}{50 +50e^{-Mk}} = \frac{100}{1+e^{-Mk}} \]
+    \[ \implies \frac{51}{100} = \frac{1}{1+e^{-Mk}} \implies  \]
+    \[  1+ e^{-Mk} = \frac{100}{51} \implies  e^{-Mk} = \frac{100}{51} -1
+    \implies \]
+    \[ -Mk = \ln \bigg( \frac{100}{51} -1 \bigg) \]
+    \[ \implies k= - \frac{\ln ( \frac{100}{51} - 1)}{10 \times 10^3} > 0 \]
+
+    Therefore we can now solve \( P(t) = 80 \times 10^3 \) \\
+    for t. \\
+
+  \end{example}
+
+\section{Doomsday/Extinction Model:} 
+
   Here we assume that 
   \[ \beta = kP, \text{  } k>0 \]
   \[ \text{ \& } \delta  = \delta_0 \]
-  Thus, the gen pop ODE, \( P' = (\beta -\delta )P \), \\
-  becomes \\
-  \[ \text{ (1) } P' = (kP-\delta_0)P = kP(P-\delta/k )  \]
-  put \( M = \delta / k > 0 \), then \\
-  (1) becomes 
-  \[ \text{ (2) } P' = kP(P-M) \]
-  constant (2) with the logistics \\
+
+  Thus, the gen pop ODE, \( P' = (\beta -\delta )P \), becomes 
+
+  \begin{equation}
+    \tag{1}
+    \label{Model1}
+    P' = (kP-\delta_0)P = kP(P-\delta/k )
+  \end{equation}
+
+  put \( M = \delta / k > 0 \),
+  \eqref{Model1} becomes
+
+  \begin{equation}
+    \tag{2}
+    \label{Model2}
+    P' = kP(P-M)
+  \end{equation}
+
+  constant \eqref{Model2} with the logistics \\
   ODE: \( P' =kP(M-P) \) we 
-  can solve (2); it is separable. Thus,
+  can solve \eqref{Model2}; it is separable. Thus,
   \[ \frac{P'}{P(P-M)}= k \implies  \]
   \[ \int \frac{1}{P(P-M)}dP = kt + C \]
+
   Note:
+
   \[ \frac{1}{P(P-M)} = \frac{1}{M}( \frac{1}{P-M}- \frac{1}{P}) \]
-  \( \therefore  \)
+
+  Therefore 
+
   \[ \frac{1}{M}( \ln|P-M| - \ln P ) = kt + C \]
   \[ \implies \ln  \bigg| \frac{P-M}{P}\bigg| = Mk + C \]
   \[ \implies \frac{|P-M|}{P} = e^{Mkt+C} \]
+
   If \( P_0 = P(0) \) then 
+
   \[ C = \ln \bigg|\frac{P_0-M}{P_0}\bigg| \]
+
   so,
+
   \[ \frac{P-M}{P} = \frac{P_0-M}{P_0}e^{Mkt} \]
+
   Now, in any case 
+
   \[ \frac{P-M}{P} = \frac{P_0 - M}{P_0}e^{Mkt} \implies \]
   \[ 1 - \frac{M}{P} = \frac{P_0-M}{P_0}e^{Mkt} \implies  \]
   \[ \frac{M}{P} = \frac{P_0- (P_0 -M) e^{Mkt} }{P_0} \implies  \]
   \[ \boxed{P = \frac{MP_0}{P_0 + (M-P_0)e^{Mkt}} } \]
-  contrast with logistic ODE \\
-  soln: 
+
+  contrast with logistic ODE soln: 
+
   \[ P = \frac{P_0M}{P_0 + (M-P_0)e^{-Mkt}} \]
 
   % }}}
@@ -173,58 +229,89 @@
   \newpage
   \marginpar{Date: 02.23.15.}
 \section*{With explosion/extinction modol}
+
   Notice that 
+
   \[ P>M \implies P'>0 \implies P \text{ is increasing; } \]
   \[ P>M \implies P'<0 \implies P \text{ is decreasing; } \]
-  Now, if \( P>0 \), then P has a vertical \\
-  asymptote at \( t_0 \) st. 
+
+  Now, if \( P>0 \), then P has a vertical 
+  asymptote at \( t_0 \) such that. 
+
   \[ P_0 + (M-P_0)e^{Mkt_0} = 0 \implies \]
   \[ e^{Mkt_0} = \frac{P_0}{P_0 - M}>0 \implies \]
   \[ Mkt_0 = \ln \frac{P_0}{P_0-M} \]
   \[ \boxed{t_0 = \frac{1}{Mk} \ln \bigg( \frac{P_0}{P_0-M} \bigg)} \]
-  which is the time of "doomsday," i.e., the explosion \\
-  of the population \\ 
+
+  which is the time of "doomsday," i.e., the explosion of the population 
+
   \[ \lim_{t \to t_0^-} P(t) = \infty \]
+
   On the other hand, if \( P<M \), then \( M-P_0>0; \) the
+
   \[ \lim_{t \to \infty} P(t) = 0 \]
+  j
   This is to say, over time, extinction occurs. 
 
   % }}}
 
   % Date: 02.24.15. ----------------------------- {{{
   \newpage 
+
+  \marginpar{Date: 02.24.15}
 \section*{equilibuim solns and stability}
-  Def. An autonomous ODE has the \\
-  form 
-  \[ \text{ (1) } \frac{dx}{dt} = f(x) \]
-  Notice that the slope field in (1) is "independent" \\
-  of autonomous" of t. \\
+
+  Def. An autonomous ODE has the form 
+
+  \begin{equation}
+    \tag{1}
+    \label{autonomous ODE}
+    \frac{dx}{dt} = f(x) 
+  \end{equation}
+
+  Notice that the slope field in \eqref{autonomous ODE} is "independent"
+  of t.
+
 \section*{ Newtons law of cooling} 
+
   \[ T' = k(A-T) \text{ , } k>0 \]
+
   Recall:
+
   \[ \int \frac{1}{A-T}dt = \int kdt = kt + C \implies \]
   \[ -\ln |A-T| = kt +C \implies  \]
   \[ |A-T| = e^{-kt-C} \]
+
   where \( T_0 = T(0) \implies  \)
-  \[ -C = \ln |A-T_0|  \] thus, 
+
+  \[ -C = \ln |A-T_0|  \] 
+
+  thus, 
+
   \[ |A-T| = |A-T_0|e^{-kt} \implies \]
   \[ A-T = (A-T_0)e^{-kt} \implies \]
   \[ \boxed{T(t) = A + (T_0-A)e^{-kt} } \]
+
   Notice that 
+
   \[ \lim_{t \to \infty} = A \]
-  Also, notice that \( T(t) \equiv A \),  i.e,\\
-  \( T(t) = A \) for all t, in a soln to \\
-  the autonomous ODE \( T' = k(A-T) \). this \\
-  is  an example of an "equilibruim soln" \\[5mm] 
-  Def. \( x(t) \equiv  C \in \mathbb{R} \) is an equilibrium soln to \\
-  \( x' = f(x) \text{ iff } x(t) \equiv C \) is a soln to \( x' = f(x) \)
-  \\[5mm]
-  Def. \( x = C \in \mathbb{R}  \) is a critical point of \( x' = f(x) \)
-  iff \( f(c) = 0 \)\\
-  Notice that we say that "x is a \\
-  critical pt" iff \( 0 = f(C) = \frac{dx}{dt} \), \\
-  which is similar to use in calc I of  \\
-  "critical pt." \\[5mm]
+
+  Also, notice that \( T(t) \equiv A \),  i.e, \( T(t) = A \) for all t,
+  in a soln to the autonomous ODE \( T' = k(A-T) \). this is  an example
+  of an "equilibruim soln" \\[5mm] 
+
+  \begin{definition}
+   \( x(t) \equiv  C \in \mathbb{R} \) is an equilibrium soln to \( x' =
+   f(x) \text{ iff } x(t) \equiv C \) is a soln to \( x' = f(x) \)
+  \end{definition}
+
+  \begin{definition}
+   \( x = C \in \mathbb{R}  \) is a critical point of \( x' = f(x) \) iff \( f(c) = 0 \)
+  \end{definition}
+
+  Notice that we say that "x is a critical point" iff \( 0 = f(C) =
+  \frac{dx}{dt} \), which is similar to use in calc I of  "critical pt." \\[5mm]
+
   Prop. \( x=C \) is a critixcal pt \\
   of \( x'=f(x) \iff x(t) \equiv  C \) \\
   is an equilibrium soln to \( x' = f(x) \) \\
@@ -234,11 +321,14 @@
   critical pt of \( x' = f(x)  \) and \\
   \[ \forall \epsilon >0 \text{  } \exists \text{  } \delta >0 \forall \]
   \[ |x_0 -C| < \delta  \implies |x(t) -C| < \epsilon  \]
+
 \section*{Ex (Logistics Modle)}
   \[ P' = kP(M-P) \implies \]
   \[ P(t) = \frac{MP_0}{p_0 + (M - P) e^{-Mkt} } \implies  \]
   \[ \lim_{t \to \infty}P(t) = M \]
+
   Ex(Standard pop Model) 
+
   \[ P' = kP \implies P(t) = P_0 e^{kt}  \]
   Here \( P=0 \) is a critical pt; however, \\
   \( P=0  \) is not stable. 
@@ -262,26 +352,39 @@
   % Date: 02.25.15. ------------------- {{{
   \newpage 
   \marginpar{Date: 02.25.15.}
-  Logistics Population Model with  Harvesting \\
+\section{Logistics Population Model with  Harvesting}
+
   Recall the Logistics Pop Model: 
+
   \[ P' = kP(M-P) \text{, }k \text{, } M>0  \]
+
   We now consider
+
   \[ P' = kP(M-P)-h \]
+
   where h is a constant, think: \( h>0 \implies \) harvesting; \\
+
   \[ h<0 \implies \text{ stocking } \]
+
   Notice that 
-  \[ P' = -kP^2 + kMP -h \]
-  \[ =-k(P^2 -MP + h/k) \]
-  \[ = -k(P-N)(P-H) \]
+  \begin{align*}
+  P' &= -kP^2 + kMP -h \\
+   &= -k(P^2 -MP + h/k) \\
+   &= -k(P-N)(P-H) 
+  \end{align*}
+
   where
+
   \[ \text{ H,N  } = \frac{M \pm \sqrt{M^2 -4h/k}}{2} \]
-  Here H and N are distinct reals if  \\
-  and only if \( M^2 -4h/k > 0 \iff \) \\
-  \( M^2 >4h/k \iff h<kM^2/4 \). so,  \\
-  if \( h>0 \) and H, N are distinct and  \\
-  real, then 
+
+  Here H and N are distinct reals if and only if \( M^2 -4h/k > 0 \iff
+   M^2 >4h/k \iff h<kM^2/4 \). so, if \( h>0 \) and H, N are distinct
+   and real, then 
+
   \[ 0 < h< \frac{kM^2}{4} \]
+
   Say, H<N. Notice that 
+
   \[ h>0 \implies \]
   \[ \sqrt{M^2 -4h/k} <  \sqrt{m^2} \implies  \]
   \[ M- \sqrt{M^2 - 4h/k} > 0 \]
@@ -383,8 +486,14 @@
   \newpage
   \marginpar{Date: 03.03.15 }
   Recall that \(F_R = \pm kv^p  \), \( F_G = -mg \), and 
+
   \[ ma = \sum F = F_G + F_R \implies \]
-  \[ \text{ (1) } v' = -g \pm \frac{k}{m} v^p = -g \pm \rho v^p \]
+
+  \[
+  \tag{1}
+  \label{eq:}
+  v' = -g \pm \frac{k}{m} v^p = -g \pm \rho v^p
+  \]
   where drag \( \rho = k/m \).\\
   p=2 there are 2 cases: \\
   (i) upward motion, \( F_R = -kv^2 \);\\
@@ -593,7 +702,11 @@
   \newpage
   \marginpar{Date: 03.11.15 }
   Recall that an nth order linear ODE has the form 
-  \[ \text{ (1) } y^{(n)} + \sum_{k=1}^n Pk(x)y^{(n-k)} = f(x)\]
+  \[ 
+  \tag{1} 
+  \label{nth order linear ODE}
+  y^{(n)} + \sum_{k=1}^n Pk(x)y^{(n-k)} = f(x)
+  \]
   where \( Pk \) and \( f \) are cts for \( 1 \leq k \leq n \). \\
   The associated homogeneous nth order linear ODE to (1) is\\
   (2)

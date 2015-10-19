@@ -1,0 +1,57 @@
+% vim:tw=72 sw=2 ft=tex
+%         File: FullClassNotes.tex
+% Date Created: 2015 Mar 31
+%  Last Change: 2015 May 06
+%     Compiler: pdflatex
+%       Author: joshua
+\documentclass[12pt, twoside]{report}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{empheq} % Needed it for something dont remember what
+\usepackage{tikz}
+
+\graphicspath{ {./images/} }
+
+\usepackage{mathrsfs} % gives me a font I need
+\usepackage[document]{ragged2e} % flush everything left dont wory about
+% the error 
+
+\everymath{\displaystyle}
+
+\DeclareMathOperator\arctanh{arctanh}
+\DeclareMathOperator\sech{sech}
+
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{corollary}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{example}{Example}
+
+
+\begin{document}
+
+\input{titlepage}
+
+\tableofcontents{}
+
+\chapter{First Test}
+
+\input{./tex/test1.tex}
+
+\chapter{Second Test}
+
+\input{./tex/test2.tex}
+
+\chapter{Third Test}
+
+\input{./tex/test3.tex}
+
+\chapter{Fourth Test}
+
+\input{./tex/test4.tex}
+\end{document}

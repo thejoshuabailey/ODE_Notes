@@ -11,21 +11,8 @@
 \usepackage[english]{babel}
 \usepackage{graphicx}
 
-\usepackage{mathrsfs} % gives me a font I need
-\usepackage[document]{ragged2e} % flush everything left dont wory about
-% the error 
-
 \DeclareMathOperator\arctanh{arctanh}
 \DeclareMathOperator\sech{sech}
-
-\newtheorem*{theorem}{Theorem}
-\newtheorem*{corollary}{Corollary}
-
-\theoremstyle{definition}
-\newtheorem*{definition}{Definition}
-\newtheorem*{example}{Example}
-
-\everymath{\displaystyle}
 
 \graphicspath{ {./images/} }
 

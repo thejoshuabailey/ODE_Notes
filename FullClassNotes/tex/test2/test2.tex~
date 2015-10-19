@@ -1,7 +1,7 @@
 % vim:tw=72 sw=2 ft=tex
 %         File: test2.tex
 % Date Created: 2015 Feb 17
-%  Last Change: 2015 Mar 11
+%  Last Change: 2015 May 16
 %     Compiler: pdflatex
 %       Author: joshua
 \documentclass[10pt,a4paper]{article}
@@ -10,13 +10,13 @@
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 \usepackage{graphicx}
-
 \usepackage{mathrsfs} % gives me a font I need
 \usepackage[document]{ragged2e} % flush everything left dont wory about
-% the error 
+% the error
 
 \DeclareMathOperator\arctanh{arctanh}
 \DeclareMathOperator\sech{sech}
+
 
 \newtheorem*{theorem}{Theorem}
 \newtheorem*{corollary}{Corollary}
@@ -29,20 +29,25 @@
 
 \graphicspath{ {./images/} }
 
+
+\graphicspath{ {./images/} }
+
 \begin{document}
-\title{Notes for Second Test}
-\author{Joshua Bailey}
-\maketitle
-\newpage
+%\title{Notes for Second Test}
+%\author{Joshua Bailey}
+%\maketitle
+%\newpage
 
 % Date 02.17.15. --------------------------  {{{
 \marginpar{Date: 02.17.15.}
-\section*{Ex}
+\begin{example}
   \[ (2x \sin y \cos y ) y' = 4x^2 + \sin^2y \]
   \[ v = \sin y \implies\]
   \[ \frac{dv}{dx} = \cos y \frac{dy}{dx} \]
+
   Thus, 
   \[ 2xvv' = 4x^2 + v^2 \text{ (hom),  } w = v/x \]
+\end{example}
 
 \section*{2.1 population models}
   Recall that the most basic population model, \\ 

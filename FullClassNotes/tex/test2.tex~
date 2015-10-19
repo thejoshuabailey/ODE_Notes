@@ -1,40 +1,3 @@
-% vim:tw=72 sw=2 ft=tex
-%         File: test2.tex
-% Date Created: 2015 Feb 17
-%  Last Change: 2015 Mar 11
-%     Compiler: pdflatex
-%       Author: joshua
-\documentclass[10pt,a4paper]{article}
-\usepackage{amsmath, amssymb}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[english]{babel}
-\usepackage{graphicx}
-
-\usepackage{mathrsfs} % gives me a font I need
-\usepackage[document]{ragged2e} % flush everything left dont wory about
-% the error 
-
-\DeclareMathOperator\arctanh{arctanh}
-\DeclareMathOperator\sech{sech}
-
-\newtheorem*{theorem}{Theorem}
-\newtheorem*{corollary}{Corollary}
-
-\theoremstyle{definition}
-\newtheorem*{definition}{Definition}
-\newtheorem*{example}{Example}
-
-\everymath{\displaystyle}
-
-\graphicspath{ {./images/} }
-
-\begin{document}
-\title{Notes for Second Test}
-\author{Joshua Bailey}
-\maketitle
-\newpage
-
 % Date 02.17.15. --------------------------  {{{
 \marginpar{Date: 02.17.15.}
 \section*{Ex}
@@ -664,6 +627,3 @@
 
   %xy-pic
   %asymptote 
-
-
-  \end{document}

@@ -1,0 +1,24 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}First Test}{3}
+\contentsline {section}{\numberline {1.1}Date: 1.12.15}{3}
+\contentsline {section}{\numberline {1.2}Date: 1.13.15}{3}
+\contentsline {section}{\numberline {1.3}Date: 01.14.15}{4}
+\contentsline {section}{\numberline {1.4}Date: 01.29.2015}{9}
+\contentsline {section}{\numberline {1.5}Date: 02.02.2015}{11}
+\contentsline {section}{\numberline {1.6}Date: 02.09.2015}{20}
+\contentsline {subsection}{\numberline {1.6.1}ex}{21}
+\contentsline {subsection}{\numberline {1.6.2}p.74 16}{21}
+\contentsline {subsection}{\numberline {1.6.3}Ex}{21}
+\contentsline {subsection}{\numberline {1.6.4}Ex (Revisited)}{22}
+\contentsline {section}{\numberline {1.7}Date: 02.10.2015}{23}
+\contentsline {subsection}{\numberline {1.7.1}ex p.74 2}{23}
+\contentsline {section}{\numberline {1.8}Date: 02.11.2015}{24}
+\contentsline {subsection}{\numberline {1.8.1}p.74 25}{25}
+\contentsline {chapter}{\numberline {2}Second Test}{27}
+\contentsline {section}{\numberline {2.1}2.1 population models}{27}
+\contentsline {section}{\numberline {2.2}ex(P.88) \# 22}{30}
+\contentsline {section}{\numberline {2.3}With explosion/extinction modol}{33}
+\contentsline {section}{\numberline {2.4}Vertical Motion with Air Resistance}{40}
+\contentsline {section}{\numberline {2.5}Escape Velocity}{45}
+\contentsline {chapter}{\numberline {3}Third Test}{53}
+\contentsline {chapter}{\numberline {4}Fourth Test}{70}

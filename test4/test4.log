@@ -1,16 +1,16 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.22)  8 APR 2015 10:09
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.22)  3 MAY 2015 22:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**test3.tex
-(./test3.tex
+**test4.tex
+(./test4.tex
 LaTeX2e <2011/06/27>
 Babel <3.9h> and hyphenation patterns for 78 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -417,8 +417,8 @@ Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
 \RaggedLeftParindent=\skip60
 \RaggedRightParindent=\skip61
 \JustifyingParindent=\skip62
-) (./test3.aux)
-\openout1 = `test3.aux'.
+) (./test4.aux)
+\openout1 = `test4.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
 LaTeX Font Info:    ... okay on input line 31.
@@ -499,79 +499,272 @@ Package ragged2e Info: ABD: executing \RaggedRight on input line 31.
 ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 31.
 
+Overfull \hbox (6.76755pt too wide) in paragraph at lines 33--33
+\T1/cmr/m/n/12 04.13.15  
+ []
+
 
 LaTeX Warning: Marginpar on page 1 moved.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 62.
+LaTeX Font Info:    Try loading font information for U+msa on input line 34.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 62.
+LaTeX Font Info:    Try loading font information for U+msb on input line 34.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 62.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 34.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
-Overfull \hbox (1.22505pt too wide) in paragraph at lines 238--243
-[]\T1/cmr/m/n/10 However, if $\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 6\OT1/cmr/m/n
-/10 = 0$ \T1/cmr/m/n/10 then $[] \OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 6\OT1/cmr/
-m/n/10 = 0$\T1/cmr/m/n/10 ; whence, $\OML/cmm/m/it/10 b \OT1/cmr/m/n/10 = 0$\T1
-/cmr/m/n/10 . Hence, $\OML/cmm/m/it/10 B \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f[]
- \OML/cmm/m/it/10 x[] [] x\OMS/cmsy/m/n/10 g$ 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (6.76755pt too wide) in paragraph at lines 95--95
+\T1/cmr/m/n/12 04.14.15  
+ []
+
+[2]
+Overfull \hbox (6.76755pt too wide) in paragraph at lines 190--190
+\T1/cmr/m/n/12 04.15.15  
+ []
+
+[3]
+Overfull \hbox (6.76755pt too wide) in paragraph at lines 227--227
+\T1/cmr/m/n/12 04.16.15  
  []
 
 [4]
-Overfull \hbox (1.93431pt too wide) in paragraph at lines 303--305
-[]$\U/msa/m/n/10 ) \OML/cmm/m/it/10 y \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 e[]$ \
-T1/cmr/m/n/10 is a soln to (1) if $\OML/cmm/m/it/10 r$ \T1/cmr/m/n/10 is a root
- (zero) of the char poly of $[][] \OML/cmm/m/it/10 a[]y[] \OT1/cmr/m/n/10 = 
+./test4.tex:259: Missing $ inserted.
+<inserted text> 
+                $
+l.259 \begin{cases}
+                   
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./test4.tex:262: Missing $ inserted.
+<inserted text> 
+                $
+l.262 \end{cases}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[5] [6] [7]
+./test4.tex:381: Double subscript.
+<argument> ...' + pv_1'y_1 + pv_1y_1' + pv_2'y_1 _
+                                                   pv_2y_2' + q_vy_1 + qv_2y...
+l.381 \end{align*}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+./test4.tex:381: Double subscript.
+<argument> ...' + pv_1'y_1 + pv_1y_1' + pv_2'y_1 _
+                                                   pv_2y_2' + q_vy_1 + qv_2y...
+l.381 \end{align*}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+
+Overfull \hbox (19.30258pt too wide) in paragraph at lines 381--381
+[]  
  []
 
-[5]
-Overfull \hbox (2.82294pt too wide) in paragraph at lines 419--425
-[]\T1/cmr/m/n/10 and we showed that if $\OML/cmm/m/it/10 r[]; [] ; r[]$ \T1/cmr
-/m/n/10 are pair-wise dis-tinct then $\OML/cmm/m/it/10 B \OT1/cmr/m/n/10 = \OMS
-/cmsy/m/n/10 f\OML/cmm/m/it/10 e[]; [] ; e[]\OMS/cmsy/m/n/10 g$ 
+[8]
+Overfull \hbox (6.76755pt too wide) in paragraph at lines 395--395
+\T1/cmr/m/n/12 04.20.15  
  []
 
-[6] [7] [8] [9] [10] [11]
-Missing character: There is no c in font rsfs10!
-Missing character: There is no c in font rsfs10!
- [12] [13] [14] (./test3.aux) ) 
+
+LaTeX Warning: Marginpar on page 9 moved.
+
+[9] [10] [11] [12]
+Overfull \hbox (6.76755pt too wide) in paragraph at lines 612--612
+\T1/cmr/m/n/12 04.21.15  
+ []
+
+
+Overfull \hbox (6.76755pt too wide) in paragraph at lines 614--614
+\T1/cmr/m/n/12 04.22.15  
+ []
+
+
+LaTeX Warning: Marginpar on page 13 moved.
+
+[13] [14]
+./test4.tex:712: Undefined control sequence.
+l.712 \text{ Range} (\cosh) = [1,\enfinity
+                                          )\). So, if \( A > 0 \) then \( x(t)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (6.76755pt too wide) in paragraph at lines 721--721
+\T1/cmr/m/n/12 04.23.15  
+ []
+
+
+Overfull \hbox (0.4499pt too wide) detected at line 745
+[]  \OMS/cmsy/m/n/12 ([])  []  ([])  []  ([]) 
+ []
+
+[15]
+./test4.tex:791: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.791   \hline
+              
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+[16]
+Overfull \hbox (6.76755pt too wide) in paragraph at lines 914--914
+\T1/cmr/m/n/12 04.27.15  
+ []
+
+[17]
+Overfull \hbox (6.76755pt too wide) in paragraph at lines 979--979
+\T1/cmr/m/n/12 04.29.15  
+ []
+
+
+Overfull \hbox (8.70088pt too wide) in paragraph at lines 983--986
+[]\T1/cmr/m/n/12 where $\OML/cmm/m/it/12 p\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\O
+T1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 [][]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 C\OT1/
+cmr/m/n/12 (\OML/cmm/m/it/12 I\OT1/cmr/m/n/12 ))$\T1/cmr/m/n/12 . Now, we con-s
+ider the case where $\OML/cmm/m/it/12 p\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/
+cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 [][]\OT1/cmr/m/n/12 (\U/msb/m/n/12 R\OT1/cmr/m/
+n/12 )$\T1/cmr/m/n/12 , 
+ []
+
+[18]
+./test4.tex:1024: Missing $ inserted.
+<inserted text> 
+                $
+l.1024 ...s \( \vec{x}(t) \) is a soln to (1) \iff
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./test4.tex:1025: Missing $ inserted.
+<inserted text> 
+                $
+l.1025 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+[19]
+Overfull \hbox (6.76755pt too wide) in paragraph at lines 1091--1091
+\T1/cmr/m/n/12 04.30.15  
+ []
+
+./test4.tex:1094: Missing $ inserted.
+<inserted text> 
+                $
+l.1094   \begin{cases}
+                      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./test4.tex:1097: Missing $ inserted.
+<inserted text> 
+                $
+l.1097   \end{cases}
+                    
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./test4.tex:1098: Missing $ inserted.
+<inserted text> 
+                $
+l.1098   \iff
+             
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./test4.tex:1105: Missing $ inserted.
+<inserted text> 
+                $
+l.1105 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./test4.tex:1105: Missing } inserted.
+<inserted text> 
+                }
+l.1105 
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./test4.tex:1105: Extra }, or forgotten \endgroup.
+\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
+                                                  \fi 
+l.1105 
+       
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+[20]
+./test4.tex:1159: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.1159   \hline
+               
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+[21]
+Overfull \hbox (0.97928pt too wide) in paragraph at lines 1199--1201
+[]\T1/cmr/m/n/12 8c if the given vector-valued func-tions are solns to a lin-ea
+r sys-tem of ODEs, 
+ []
+
+[22] (./test4.aux) ) 
 Here is how much of TeX's memory you used:
- 3444 strings out of 493304
- 43949 string characters out of 6139871
- 115441 words of memory out of 5000000
- 6824 multiletter control sequences out of 15000+600000
- 12510 words of font info for 34 fonts, out of 8000000 for 9000
+ 3452 strings out of 493304
+ 44019 string characters out of 6139871
+ 112477 words of memory out of 5000000
+ 6829 multiletter control sequences out of 15000+600000
+ 11849 words of font info for 39 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,10n,26p,231b,191s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-su
-per-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsf
-s/rsfs10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/s
-hare/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/typ
-e1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
-fti1000.pfb>
-Output written on test3.pdf (14 pages, 206432 bytes).
+ 38i,10n,26p,231b,189s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sym
+bols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></us
+r/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on test4.pdf (22 pages, 166355 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
- 82 compressed objects within 1 object stream
+ 124 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
